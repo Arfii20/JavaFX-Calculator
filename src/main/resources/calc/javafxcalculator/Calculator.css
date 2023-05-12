@@ -50,4 +50,6 @@
 
 .text-area {
     -fx-background-color: #f0f0f0;
+    -fx-font-size: 24;
+    -fx-wrap-text: true;
 }

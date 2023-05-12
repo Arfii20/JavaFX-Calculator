@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20d002a3-d2a9-42c6-a2d2-307835584ad6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/calc/javafxcalculator/Calculator.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/calc/javafxcalculator/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/calc/javafxcalculator/Calculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/calc/javafxcalculator/HelloController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/calc/javafxcalculator/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/calc/javafxcalculator/Calculator.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/calc/javafxcalculator/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/calc/javafxcalculator/Calculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/calc/javafxcalculator/Calculator.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/calc/javafxcalculator/Calculator.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/calc/javafxcalculator/Calculator.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/calc/javafxcalculator/Calculator.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +56,26 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="Calculator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="calc.javafxcalculator.Calculator" />
+      <module name="JavaFX-Calculator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="calc.javafxcalculator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Calculator" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -67,7 +85,7 @@
       <option name="presentableId" value="Default" />
       <updated>1683904485886</updated>
       <workItem from="1683904487268" duration="345000" />
-      <workItem from="1683905247606" duration="2788000" />
+      <workItem from="1683905247606" duration="5565000" />
     </task>
     <servers />
   </component>
