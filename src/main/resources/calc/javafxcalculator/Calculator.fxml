@@ -16,7 +16,7 @@
             <Button mnemonicParsing="false" text="π" />
             <Button mnemonicParsing="false" text="e" />
             <Button mnemonicParsing="false" text="CE" />
-            <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="1">
+            <Button mnemonicParsing="false" text="[X]">
                <HBox.margin>
                   <Insets />
                </HBox.margin></Button>
@@ -24,10 +24,10 @@
       </HBox>
       <HBox layoutX="50.0" layoutY="198.0" prefHeight="48.0" prefWidth="360.0" spacing="4.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="280.0">
          <children>
-            <Button mnemonicParsing="false" text="x^2" />
-            <Button mnemonicParsing="false" text="1/x" />
-            <Button mnemonicParsing="false" text="|x|" />
-            <Button mnemonicParsing="false" text="exp" />
+            <Button mnemonicParsing="false" onMousePressed="#functions" text="x^2" />
+            <Button mnemonicParsing="false" onMousePressed="#functions" text="1/x" />
+            <Button mnemonicParsing="false" onMousePressed="#functions" text="|x|" />
+            <Button mnemonicParsing="false" onMousePressed="#functions" text="exp" />
             <Button mnemonicParsing="false" text="mod">
                <HBox.margin>
                   <Insets />
@@ -37,11 +37,11 @@
       </HBox>
       <HBox layoutX="50.0" layoutY="198.0" prefHeight="48.0" prefWidth="360.0" spacing="4.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="330.0">
          <children>
-            <Button mnemonicParsing="false" text="sqrt" />
+            <Button mnemonicParsing="false" onMousePressed="#functions" text="sqrt" />
             <Button mnemonicParsing="false" text="(" />
             <Button mnemonicParsing="false" text=")" />
-            <Button mnemonicParsing="false" text="n!" />
-            <Button mnemonicParsing="false" onMousePressed="#symbols" text="/">
+            <Button mnemonicParsing="false" onMousePressed="#functions" text="n!" />
+            <Button mnemonicParsing="false" onMousePressed="#multiplyDivide" text="/">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
@@ -54,7 +54,7 @@
             <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="7" />
             <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="8" />
             <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="9" />
-            <Button mnemonicParsing="false" text="x">
+            <Button mnemonicParsing="false" onMousePressed="#multiplyDivide" text="x">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
@@ -67,7 +67,7 @@
             <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="4" />
             <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="5" />
             <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="6" />
-            <Button mnemonicParsing="false" onMousePressed="#symbols" text="-">
+            <Button mnemonicParsing="false" onMousePressed="#addSubtract" text="-">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
@@ -80,7 +80,7 @@
             <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="1" />
             <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="2" />
             <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="3" />
-            <Button mnemonicParsing="false" onMousePressed="#symbols" text="+">
+            <Button mnemonicParsing="false" onMousePressed="#addSubtract" text="+">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
