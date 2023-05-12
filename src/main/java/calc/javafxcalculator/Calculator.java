@@ -83,24 +83,30 @@ public class Calculator extends Application {
     }
 
     public void multiplyDivide(MouseEvent event) {
-        String num = textArea.getText();
-        String symbol = ((Button) event.getSource()).getText();
-
-        // Checking if a symbol is already selected
-        try {
-            Double.parseDouble(num);
-        }
-        catch (NumberFormatException e) {
-            textArea.setText(symbol);
-            return;
-        }
-
-        if (num.equals("")) {
-            num = "0";
-        }
-
-        resultArea.setText(num);
-        textArea.setText(symbol);
+//        String num = textArea.getText();
+//        String num1 = resultArea.getText();
+//        String symbol = ((Button) event.getSource()).getText();
+//
+//        // Checking if a symbol is already selected
+//        try {
+//            Double.parseDouble(num);
+//        }
+//        catch (NumberFormatException e) {
+//            textArea.setText(symbol);
+//            return;
+//        }
+//
+//        if (num.equals("")) {
+//            num = "0";
+//        }
+//
+//
+//        if (symbol.equals("x")) {
+//            symbol = "*";
+//        }
+//
+//        resultArea.setText(num);
+//        textArea.setText(symbol);
     }
 
     public void functions(MouseEvent event) {
@@ -136,6 +142,21 @@ public class Calculator extends Application {
                 resultArea.setText(num.toString());
                 textArea.setText("");
             }
+            case "ln" -> {
+                num = Math.log(num);
+                resultArea.setText(num.toString());
+                textArea.setText("");
+            }
+            case "log" -> {
+                num = Math.log10(num);
+                resultArea.setText(num.toString());
+                textArea.setText("");
+            }
+            case "10^x" -> {
+                num = 10*num;
+                resultArea.setText(num.toString());
+                textArea.setText("");
+            }
             case "n!" -> {
                 int factNum = 1;
                 if (num >= 0) {
@@ -147,6 +168,24 @@ public class Calculator extends Application {
                     resultArea.setText(String.valueOf(factNum));
                     textArea.setText("");
                 }
+            }
+            case "CE" -> {
+                resultArea.setText("");
+                textArea.setText("");
+            }
+            case "[X]" -> {
+                String text = textArea.getText();
+                if (text.length() > 0) {
+                    textArea.setText(text.substring(0, text.length()-1));
+                }
+            }
+            case "e" -> {
+                resultArea.setText(String.valueOf(Math.E));
+                textArea.setText("");
+            }
+            case "π" -> {
+                resultArea.setText(String.valueOf(Math.PI));
+                textArea.setText("");
             }
         }
     }
