@@ -1,0 +1,53 @@
+.root {
+    -fx-background-color: #242424;
+}
+
+#display {
+    -fx-font-size: 36px;
+    -fx-text-fill: #ffffff;
+    -fx-alignment: CENTER_RIGHT;
+    -fx-background-color: #121212;
+    -fx-padding: 10px;
+    -fx-effect: innershadow(gaussian, rgba(255,255,255,0.1), 10, 0, 2, 2);
+}
+
+.button {
+    -fx-font-size: 15px;
+    -fx-pref-width: 68;
+    -fx-pref-height: 46;
+    -fx-background-color: #2c2c2c;
+    -fx-background-radius: 0;
+    -fx-border-color: #333333;
+    -fx-border-radius: 0;
+    -fx-border-width: 1px;
+    -fx-text-fill: #ffffff;
+}
+
+.button:hover {
+    -fx-background-color: #353535;
+}
+
+.button:pressed {
+    -fx-background-color: #1c1c1c;
+    -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.1), 5, 0, 0, 1);
+}
+
+#clear-button {
+    -fx-background-color: #f0ad4e;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #eea236;
+    -fx-border-width: 1px;
+}
+
+#clear-button:hover {
+    -fx-background-color: #f0ad4e;
+}
+
+#clear-button:pressed {
+    -fx-background-color: #f58c38;
+    -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.1), 5, 0, 0, 1);
+}
+
+.text-area {
+    -fx-background-color: #f0f0f0;
+}
