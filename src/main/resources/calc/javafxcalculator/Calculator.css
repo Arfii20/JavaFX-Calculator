@@ -53,3 +53,28 @@
     -fx-font-size: 24;
     -fx-wrap-text: true;
 }
+
+.text-area .scroll-pane > .scroll-bar:horizontal {
+    -fx-pref-height: 8px;
+    -fx-background-color: transparent;
+    -fx-background-radius: 5px;
+    -fx-padding: 0;
+}
+
+.text-area .scroll-pane > .scroll-bar:horizontal .thumb {
+    -fx-background-color: #8a8a8a;
+    -fx-background-radius: 5px;
+}
+
+.text-area .scroll-pane > .scroll-bar:horizontal .track {
+    -fx-background-color: #f5f5f5;
+    -fx-background-radius: 5px;
+}
+
+.text-area .scroll-pane > .scroll-bar:horizontal .increment-button,
+.text-area .scroll-pane > .scroll-bar:horizontal .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-pref-width: 0;
+}
+
