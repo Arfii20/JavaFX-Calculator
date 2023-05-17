@@ -16,8 +16,8 @@
          <Button mnemonicParsing="false" text="2nd" />
          <Button mnemonicParsing="false" onMousePressed="#functions" text="π" />
          <Button mnemonicParsing="false" onMousePressed="#functions" text="e" />
-         <Button mnemonicParsing="false" onMousePressed="#functions" text="CE" />
-         <Button mnemonicParsing="false" onMousePressed="#functions" text="[X]">
+         <Button mnemonicParsing="false" onMousePressed="#clearDelete" text="CE" />
+         <Button mnemonicParsing="false" onMousePressed="#clearDelete" text="[X]">
             <HBox.margin>
                <Insets />
             </HBox.margin>
@@ -28,7 +28,7 @@
          <Button mnemonicParsing="false" onMousePressed="#functions" text="1/x" />
          <Button mnemonicParsing="false" onMousePressed="#functions" text="|x|" />
          <Button mnemonicParsing="false" onMousePressed="#functions" text="exp" />
-         <Button mnemonicParsing="false" onMousePressed="#addSubMulDiv" text="mod">
+         <Button mnemonicParsing="false" onMousePressed="#addSubMulDivMod" text="mod">
             <HBox.margin>
                <Insets />
             </HBox.margin>
@@ -39,7 +39,7 @@
          <Button mnemonicParsing="false" text="(" />
          <Button mnemonicParsing="false" text=")" />
          <Button mnemonicParsing="false" onMousePressed="#functions" text="n!" />
-         <Button mnemonicParsing="false" onMousePressed="#addSubMulDiv" text="/">
+         <Button mnemonicParsing="false" onMousePressed="#addSubMulDivMod" text="/">
             <HBox.margin>
                <Insets />
             </HBox.margin>
@@ -50,7 +50,7 @@
          <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="7" />
          <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="8" />
          <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="9" />
-         <Button mnemonicParsing="false" onMousePressed="#addSubMulDiv" text="x">
+         <Button mnemonicParsing="false" onMousePressed="#addSubMulDivMod" text="x">
             <HBox.margin>
                <Insets />
             </HBox.margin>
@@ -61,7 +61,7 @@
          <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="4" />
          <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="5" />
          <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="6" />
-         <Button mnemonicParsing="false" onMousePressed="#addSubMulDiv" text="-">
+         <Button mnemonicParsing="false" onMousePressed="#addSubMulDivMod" text="-">
             <HBox.margin>
                <Insets />
             </HBox.margin>
@@ -72,7 +72,7 @@
          <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="1" />
          <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="2" />
          <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="3" />
-         <Button mnemonicParsing="false" onMousePressed="#addSubMulDiv" text="+">
+         <Button mnemonicParsing="false" onMousePressed="#addSubMulDivMod" text="+">
             <HBox.margin>
                <Insets />
             </HBox.margin>
@@ -83,7 +83,7 @@
          <Button mnemonicParsing="false" text="+/-" />
          <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="0" />
          <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="." />
-         <Button mnemonicParsing="false" text="=">
+         <Button mnemonicParsing="false" onMousePressed="#findEqual" text="=">
             <HBox.margin>
                <Insets />
             </HBox.margin>

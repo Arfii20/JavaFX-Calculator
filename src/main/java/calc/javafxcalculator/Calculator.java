@@ -10,7 +10,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class Calculator extends Application {
     @FXML
@@ -41,12 +40,16 @@ public class Calculator extends Application {
 
     public void getSetValue(MouseEvent event) {
         String buttonText = ((Button) event.getSource()).getText();
+        if (symbolArea.getText().equals("")) {
+            equationArea.setText("");
+            resultArea.setText("");
+        }
         if (!buttonText.equals(".") || !textArea.getText().contains(".")) {
             textArea.appendText(buttonText);
         }
     }
 
-    public void addSubMulDiv(MouseEvent event) {
+    public void addSubMulDivMod(MouseEvent event) {
         String symbol;
         String newNum = textArea.getText();
         String previousNum = resultArea.getText();
@@ -56,7 +59,7 @@ public class Calculator extends Application {
             symbol = symbol.matches("x|/|mod") ? "" : symbol;
             symbolArea.setText(symbol);
         }
-        else if (newNum.equals("") && !previousNum.equals("")){
+        else if (newNum.equals("")){
             symbol = ((Button) event.getSource()).getText();
             symbol = symbol.equals("mod") ? "%" : symbol;
             symbolArea.setText(symbol);
@@ -65,33 +68,21 @@ public class Calculator extends Application {
             symbol = ((Button) event.getSource()).getText();
             symbol = symbol.equals("mod") ? "%" : symbol;
             symbolArea.setText(symbol);
-            symbol = symbol.matches("x|/|mod") ? "" : symbol;
+            symbol = symbol.matches("x|/|%") ? "" : symbol;
             resultArea.setText(symbol + newNum);
             equationArea.setText(symbol + newNum);
             textArea.setText("");
         }
         else {
             symbol = symbolArea.getText().equals("") ? ((Button) event.getSource()).getText() : symbolArea.getText();
-            if (symbol.matches("x|/|mod")){
+            if (symbol.matches("x|/|%|mod")){
                 equationArea.setText("(" + equationArea.getText() + ")");
             }
             equationArea.appendText(symbol + newNum);
-
-            double result = switch (symbol) {
-                case "+" -> Double.parseDouble(previousNum) + Double.parseDouble(newNum);
-                case "-" -> Double.parseDouble(previousNum) - Double.parseDouble(newNum);
-                case "x" -> Double.parseDouble(previousNum) * Double.parseDouble(newNum);
-                case "/" -> Double.parseDouble(previousNum) / Double.parseDouble(newNum);
-                case "mod" -> Double.parseDouble(previousNum) % Double.parseDouble(newNum);
-                default -> 0.0;
-            };
-
-            result = result == -0.0 ? 0.0 : result;
-            resultArea.setText(Double.toString(result));
+            calculate(symbol, newNum, previousNum);
             symbol = ((Button) event.getSource()).getText();
             symbol = symbol.equals("mod") ? "%" : symbol;
             symbolArea.setText(symbol);
-            textArea.setText("");
         }
     }
 
@@ -112,45 +103,38 @@ public class Calculator extends Application {
             case "sqrt" -> {
                 equationArea.appendText("sqrt(" + num + ")");
                 num = Math.sqrt(num);
-                resultArea.setText(Double.toString(num));
                 textArea.setText("");
             }
             case "|x|" -> {
                 equationArea.appendText("|" + num + "|");
                 num = Math.abs(num);
-                resultArea.setText(Double.toString(num));
                 textArea.setText("");
             }
             case "1/x" -> {
                 equationArea.appendText("1/" + num);
                 if (num != 0.0) {
                     num = 1 / num;
-                    resultArea.setText(Double.toString(num));
                     textArea.setText("");
                 }
             }
             case "x^2" -> {
                 equationArea.appendText(num + "^2");
                 num = Math.pow(num, 2.0);
-                resultArea.setText(Double.toString(num));
                 textArea.setText("");
             }
             case "ln" -> {
                 equationArea.appendText("ln(" + num + ")");
                 num = Math.log(num);
-                resultArea.setText(Double.toString(num));
                 textArea.setText("");
             }
             case "log" -> {
                 equationArea.appendText("log(" + num + ")");
                 num = Math.log10(num);
-                resultArea.setText(Double.toString(num));
                 textArea.setText("");
             }
             case "10^x" -> {
                 equationArea.appendText("10^" + num);
                 num = 10*num;
-                resultArea.setText(Double.toString(num));
                 textArea.setText("");
             }
             case "n!" -> {
@@ -162,20 +146,8 @@ public class Calculator extends Application {
                             factNum *= i;
                         }
                     }
-                    resultArea.setText(String.valueOf(factNum));
+                    num = factNum;
                     textArea.setText("");
-                }
-            }
-            case "CE" -> {
-                equationArea.setText("");
-                resultArea.setText("");
-                textArea.setText("");
-                symbolArea.setText("");
-            }
-            case "[X]" -> {
-                if (text.length() > 0) {
-                    System.out.println(text.substring(0, text.length()-1));
-                    textArea.setText(text.substring(0, text.length()-1));
                 }
             }
             case "e" -> {
@@ -197,6 +169,66 @@ public class Calculator extends Application {
                 }
             }
         }
+        symbol = symbolArea.getText();
+        if (symbol.matches("x|/|%|mod")){
+            equationArea.setText("(" + equationArea.getText() + ")");
+        }
+        String previousNum = resultArea.getText();
+        if (previousNum.equals("")) {
+            resultArea.setText(symbol + Double.toString(num));
+        }
+        else {
+            calculate(symbol, Double.toString(num), previousNum);
+        }
+    }
+
+    public void clearDelete(MouseEvent event) {
+        String symbol = ((Button) event.getSource()).getText();
+        switch (symbol){
+            case "CE" -> {
+                equationArea.setText("");
+                resultArea.setText("");
+                textArea.setText("");
+                symbolArea.setText("");
+            }
+            case "[X]" -> {
+                String text = textArea.getText();
+                if (text.length() > 0) {
+                    textArea.setText(text.substring(0, text.length()-1));
+                }
+            }
+        }
+
+    }
+
+    public void findEqual(MouseEvent event) {
+        String symbol;
+        String newNum = textArea.getText();
+        String previousNum = resultArea.getText();
+        if (!newNum.equals("") && !previousNum.equals("")) {
+            symbol = symbolArea.getText();
+            if (symbol.matches("x|/|%|mod")){
+                equationArea.setText("(" + equationArea.getText() + ")");
+            }
+            equationArea.appendText(symbol + newNum);
+            calculate(symbol, newNum, previousNum);
+            symbolArea.setText("");
+        }
+    }
+
+    private void calculate(String symbol, String newNum, String previousNum) {
+        double result = switch (symbol) {
+            case "+" -> Double.parseDouble(previousNum) + Double.parseDouble(newNum);
+            case "-" -> Double.parseDouble(previousNum) - Double.parseDouble(newNum);
+            case "x" -> Double.parseDouble(previousNum) * Double.parseDouble(newNum);
+            case "/" -> Double.parseDouble(previousNum) / Double.parseDouble(newNum);
+            case "%" -> Double.parseDouble(previousNum) % Double.parseDouble(newNum);
+            default -> 0.0;
+        };
+
+        result = result == -0.0 ? 0.0 : result;
+        resultArea.setText(Double.toString(result));
+        textArea.setText("");
     }
 
     public static void main(String[] args) {
