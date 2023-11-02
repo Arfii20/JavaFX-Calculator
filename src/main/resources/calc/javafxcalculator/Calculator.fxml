@@ -1,93 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-<AnchorPane maxHeight="600.0" maxWidth="400.0" minHeight="600.0" minWidth="400.0" prefHeight="600" prefWidth="400" stylesheets="@Calculator.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <TextArea fx:id="equationArea" layoutX="20.0" layoutY="24.0" prefHeight="38.0" prefWidth="360.0" style="-fx-control-inner-background: #A0A0A0; -fx-wrap-text: false; -fx-font-size: 18;" AnchorPane.bottomAnchor="535.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
-      <TextArea fx:id="resultArea" layoutX="93.0" layoutY="63.0" prefHeight="97.0" prefWidth="360.0" style="-fx-control-inner-background: #B0B0B0;" AnchorPane.bottomAnchor="440.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="65.0" />
-      <TextArea fx:id="symbolArea" layoutX="30.0" layoutY="30.0" prefHeight="136.0" prefWidth="360.0" style="-fx-control-inner-background: #A0A0A0;" AnchorPane.bottomAnchor="390.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="330.0" AnchorPane.topAnchor="160.0" />
-      <TextArea fx:id="textArea" layoutX="20.0" layoutY="20.0" prefHeight="136.0" prefWidth="360.0" style="-fx-control-inner-background: #A0A0A0;" AnchorPane.bottomAnchor="390.0" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="160.0" />
+<AnchorPane maxHeight="600.0" maxWidth="400.0" minHeight="600.0" minWidth="400.0" prefHeight="600" prefWidth="393.0" stylesheets="@Calculator.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+      <TextArea fx:id="equationArea" layoutX="20.0" layoutY="24.0" prefHeight="38.0" prefWidth="360.0" style="-fx-control-inner-background: #A0A0A0; -fx-wrap-text: false; -fx-font-size: 18;" AnchorPane.bottomAnchor="535.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0"/>
+      <TextArea fx:id="resultArea" layoutX="93.0" layoutY="63.0" prefHeight="97.0" prefWidth="360.0" style="-fx-control-inner-background: #B0B0B0;" AnchorPane.bottomAnchor="440.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="65.0"/>
+      <TextArea fx:id="symbolArea" layoutX="30.0" layoutY="30.0" prefHeight="136.0" prefWidth="360.0" style="-fx-control-inner-background: #A0A0A0;" AnchorPane.bottomAnchor="390.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="330.0" AnchorPane.topAnchor="160.0"/>
+      <TextArea fx:id="textArea" layoutX="20.0" layoutY="20.0" prefHeight="136.0" prefWidth="360.0" style="-fx-control-inner-background: #A0A0A0;" AnchorPane.bottomAnchor="390.0" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="160.0"/>
       <HBox layoutX="40.0" layoutY="188.0" prefHeight="48.0" prefWidth="360.0" spacing="4.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="230.0">
-         <Button mnemonicParsing="false" text="2nd" />
-         <Button mnemonicParsing="false" onMousePressed="#functions" text="π" />
-         <Button mnemonicParsing="false" onMousePressed="#functions" text="e" />
-         <Button mnemonicParsing="false" onMousePressed="#clearDelete" text="CE" />
-         <Button mnemonicParsing="false" onMousePressed="#clearDelete" text="[X]">
-            <HBox.margin>
-               <Insets />
-            </HBox.margin>
-         </Button>
+         <Button mnemonicParsing="false" text="2nd"/>
+         <Button mnemonicParsing="false" onMousePressed="#functions" text="π"/>
+         <Button mnemonicParsing="false" onMousePressed="#functions" text="e"/>
+         <Button mnemonicParsing="false" onMousePressed="#clearDelete" text="CE"/>
+         <Button mnemonicParsing="false" onMousePressed="#clearDelete" text="[X]"/>
       </HBox>
       <HBox layoutX="50.0" layoutY="198.0" prefHeight="48.0" prefWidth="360.0" spacing="4.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="280.0">
-         <Button mnemonicParsing="false" onMousePressed="#functions" text="x^2" />
-         <Button mnemonicParsing="false" onMousePressed="#functions" text="1/x" />
-         <Button mnemonicParsing="false" onMousePressed="#functions" text="|x|" />
-         <Button mnemonicParsing="false" onMousePressed="#functions" text="exp" />
-         <Button mnemonicParsing="false" onMousePressed="#addSubMulDivMod" text="mod">
-            <HBox.margin>
-               <Insets />
-            </HBox.margin>
-         </Button>
+         <Button mnemonicParsing="false" onMousePressed="#functions" text="x^2"/>
+         <Button mnemonicParsing="false" onMousePressed="#functions" text="1/x"/>
+         <Button mnemonicParsing="false" onMousePressed="#functions" text="|x|"/>
+         <Button mnemonicParsing="false" onMousePressed="#functions" text="exp"/>
+         <Button mnemonicParsing="false" onMousePressed="#addSubMulDivMod" text="mod"/>
       </HBox>
       <HBox layoutX="50.0" layoutY="198.0" prefHeight="48.0" prefWidth="360.0" spacing="4.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="330.0">
-         <Button mnemonicParsing="false" onMousePressed="#functions" text="sqrt" />
-         <Button mnemonicParsing="false" text="(" />
-         <Button mnemonicParsing="false" text=")" />
-         <Button mnemonicParsing="false" onMousePressed="#functions" text="n!" />
-         <Button mnemonicParsing="false" onMousePressed="#addSubMulDivMod" text="/">
-            <HBox.margin>
-               <Insets />
-            </HBox.margin>
-         </Button>
+         <Button mnemonicParsing="false" onMousePressed="#functions" text="sqrt"/>
+         <Button mnemonicParsing="false" text="("/>
+         <Button mnemonicParsing="false" text=")"/>
+         <Button mnemonicParsing="false" onMousePressed="#functions" text="n!"/>
+         <Button mnemonicParsing="false" onMousePressed="#addSubMulDivMod" text="/"/>
       </HBox>
       <HBox layoutX="50.0" layoutY="198.0" prefHeight="48.0" prefWidth="360.0" spacing="4.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="380.0">
-         <Button mnemonicParsing="false" text="x^y" />
-         <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="7" />
-         <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="8" />
-         <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="9" />
-         <Button mnemonicParsing="false" onMousePressed="#addSubMulDivMod" text="x">
-            <HBox.margin>
-               <Insets />
-            </HBox.margin>
-         </Button>
+         <Button mnemonicParsing="false" text="x^y"/>
+         <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="7"/>
+         <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="8"/>
+         <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="9"/>
+         <Button mnemonicParsing="false" onMousePressed="#addSubMulDivMod" text="x"/>
       </HBox>
       <HBox layoutX="60.0" layoutY="208.0" prefHeight="48.0" prefWidth="360.0" spacing="4.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="430.0">
-         <Button mnemonicParsing="false" onMousePressed="#functions" text="10^x" />
-         <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="4" />
-         <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="5" />
-         <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="6" />
-         <Button mnemonicParsing="false" onMousePressed="#addSubMulDivMod" text="-">
-            <HBox.margin>
-               <Insets />
-            </HBox.margin>
-         </Button>
+         <Button mnemonicParsing="false" onMousePressed="#functions" text="10^x"/>
+         <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="4"/>
+         <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="5"/>
+         <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="6"/>
+         <Button mnemonicParsing="false" onMousePressed="#addSubMulDivMod" text="-"/>
       </HBox>
       <HBox layoutX="60.0" layoutY="208.0" prefHeight="48.0" prefWidth="360.0" spacing="4.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="480.0">
-         <Button mnemonicParsing="false" onMousePressed="#functions" text="log" />
-         <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="1" />
-         <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="2" />
-         <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="3" />
-         <Button mnemonicParsing="false" onMousePressed="#addSubMulDivMod" text="+">
-            <HBox.margin>
-               <Insets />
-            </HBox.margin>
-         </Button>
+         <Button mnemonicParsing="false" onMousePressed="#functions" text="log"/>
+         <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="1"/>
+         <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="2"/>
+         <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="3"/>
+         <Button mnemonicParsing="false" onMousePressed="#addSubMulDivMod" text="+"/>
       </HBox>
       <HBox layoutX="60.0" layoutY="208.0" prefHeight="48.0" prefWidth="360.0" spacing="4.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="530.0">
-         <Button mnemonicParsing="false" onMousePressed="#functions" text="ln" />
-         <Button mnemonicParsing="false" text="+/-" />
-         <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="0" />
-         <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="." />
-         <Button mnemonicParsing="false" onMousePressed="#findEqual" text="=">
-            <HBox.margin>
-               <Insets />
-            </HBox.margin>
-         </Button>
+         <Button mnemonicParsing="false" onMousePressed="#functions" text="ln"/>
+         <Button mnemonicParsing="false" text="+/-"/>
+         <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="0"/>
+         <Button mnemonicParsing="false" onMousePressed="#getSetValue" text="."/>
+         <Button mnemonicParsing="false" onMousePressed="#findEqual" text="="/>
       </HBox>
-   </children>
 </AnchorPane>
